@@ -1,14 +1,17 @@
-import React, { render } from 'react'
-import Class from '../utils/Class'
-import Content from '../components/Content'
-import Headbar from '../components/Headbar'
-import Button from '../components/Button'
+import React, { Component } from 'react';
+import Class from '../utils/Class';
+import Head from './Head';
 
-let Layout = Class(
-    <div>
-      <Headbar />
-      <Button />
-    </div>
-);
-
-export default Layout
+export default class Layout extends Component {
+  componentWillMount() {
+    document.body.style.margin = 0;
+  }
+  componentWillUnmount() {
+    document.body.style.margin = null;
+  }
+  render() {
+    return (
+      <Head />
+    );
+  }
+}

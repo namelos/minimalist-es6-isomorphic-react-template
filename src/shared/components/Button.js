@@ -1,6 +1,28 @@
-import React from "react";
-import comp from '../utils/comp'
-import { FlatButton } from 'material-ui'
+import React, { Component, PropTypes, createElement } from 'react';
+import mui, { Styles, Button } from 'material-ui';
 
-var Button = comp(FlatButton, {label: 'Default'});
-export default Button
+var ThemeManager = new Styles.ThemeManager();
+
+export default class Button extends Component {
+    static get childContextTypes() {
+        return {
+          muiTheme: PropTypes.object
+        };
+    }
+
+    getChildContext() {
+        return {
+          muiTheme: ThemeManager.getCurrentTheme()
+        };
+    }
+
+    render() {
+        return (
+            <Button />
+        );
+    }
+};
+
+
+export default comp;
+

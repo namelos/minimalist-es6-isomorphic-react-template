@@ -18,12 +18,7 @@ export default class Headbar extends Component {
 
   render() {
     return (
-        <AppBar
-      title="Namelos"
-      style={styles}
-        >
-        <FlatButton label='Button' />
-        </AppBar>
+        <img />
     );
   }
 };
